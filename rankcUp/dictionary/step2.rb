@@ -47,3 +47,18 @@ else
   ans = 0
   puts ans
 end
+
+# 別回答
+n = gets.to_i
+characters = {}
+n.times do
+    characters[gets.strip] = 0
+end
+​
+m = gets.to_i
+m.times do
+    char, damage = gets.split(' ')
+    characters[char] += damage.to_i
+end
+​
+puts characters[gets.strip]
