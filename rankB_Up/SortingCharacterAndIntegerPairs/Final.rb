@@ -11,7 +11,22 @@ n.times do
 end
 # {"A"=>1, "B"=>2}
 
-sort = list.invert.sort.to_h
+sorted_list = list.invert.sort.to_h
 # invertメソッドによりkeyとvalueを入れ替え、sortメソッドでkeyを昇順（小→大）、to_hメソッドで配列からハッシュに戻す。
 # {1=>"A", 2=>"B"} 
-puts sort.values
+puts sorted_list.values
+
+# 回答例2
+num = gets.chomp.to_i
+array = {}
+
+(1..num).each do
+  line = gets.chomp.split(' ')
+  array[line[1].to_i] = line[0]
+end
+
+array = array.sort
+
+array.each do |ele|
+  puts ele[1]
+end
