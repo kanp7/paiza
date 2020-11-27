@@ -194,3 +194,38 @@ elsif row_aligned? == 'X' || collum_aligned? == 'X' || oblique_aligned? == 'X'
 else
   puts 'D'
 end
+
+# 回答例3 (Python)
+# coding: utf-8
+import sys
+​
+# 渡されたままの盤面状況
+field = []
+for _ in range(5):
+    field.append(list(input()))
+​
+# fieldの縦と横を入れ替えた盤面状況
+field_t = []
+for line in field:
+    line_tmp = []
+    for i in range(5):
+        line_tmp.append(line[i])
+    field_t.append(line_tmp)
+​
+# 対角線
+diagonals = [[], []]
+for i in range(5):
+    # 右斜下方向
+    diagonals[0].append(field[i][i])
+    # 左斜下方向
+    diagonals[1].append(field[i][4 - i])
+​
+def is_victory(line, player_mark):
+    return all(map(lambda mark: mark == player_mark, line))
+​
+for player_mark in ['X', 'O']:
+    for line in field + field_t + diagonals:
+        if is_victory(line, player_mark):
+            print(player_mark)
+            sys.exit()
+print('D')
