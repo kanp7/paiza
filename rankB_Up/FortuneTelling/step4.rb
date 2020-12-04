@@ -7,9 +7,20 @@ blood = gets.chomp
 # hash = { A: :Good, B: :veryGood, O: :Yavai, AB: :VeryYabai }
 hash = {}
 
+# m行の部分でエラーが発生してしまう
 4.times do
     key, value = gets.chomp.split(" ")
     hash[key] = value
 end
-
 puts hash[blood]
+
+# 回答
+blood_type = gets.chomp
+fortunes = {}
+
+while tmp = gets do
+    tmp = tmp.chomp.split(" ")
+    fortunes[tmp[0]] = tmp[1]
+end
+
+puts fortunes[blood_type]
