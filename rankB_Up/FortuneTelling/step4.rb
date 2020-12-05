@@ -24,3 +24,14 @@ while tmp = gets do
 end
 
 puts fortunes[blood_type]
+
+# 回答2
+blood = gets.chomp
+
+4.times do
+    key, value = gets.chomp.split(" ")
+    if key == blood
+        puts value
+        break
+    end
+end
