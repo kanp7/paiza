@@ -16,3 +16,23 @@ s.size.times do |i|
 end
 
 puts ans.join()
+
+# 回答例2
+a, b = gets.chomp.split(' ').map(&:to_i)
+a -= 1
+​
+s = gets.chomp
+​
+answer = s[0...a] + s[a...b].upcase + s[b...s.size]
+​
+puts answer
+
+# 回答例3
+a, b = gets.chomp.split(' ').map(&:to_i)
+a -= 1
+​
+s = gets.chomp
+​
+s[a...b] = s[a...b].upcase
+​
+puts s
