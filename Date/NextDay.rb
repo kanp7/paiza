@@ -64,4 +64,11 @@ end
 
 y, m, d = gets.split.map(&:to_i)
 
+# 出力フォーマットで使われる%記号
+# %d は 渡された数値を10進数で出力するという書式指示
+# 真ん中の % はString#%メソッドで書式を設定して \d などに渡す。
 puts '%d %d %d' % next_day(y, m, d)
+
+# 分かりづらい場合は下記でOK
+y,m,d =  next_day(y, m, d)
+puts "#{y} #{m} #{d}"
