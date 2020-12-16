@@ -23,6 +23,7 @@ n.times do
         puts "first"
     elsif a == b-1 or a == b+1
         puts "adjacent"
+        # integerに対して下4桁を取得する際には10000で割ったあまりを出す
     elsif a % 10000 == b % 10000
         puts "second"
     elsif a % 1000 == b % 1000
@@ -31,3 +32,8 @@ n.times do
         puts "blank"
     end
 end
+
+# 文字列に対して、下4桁を取得したい場合
+# string = "142358"
+# p string.slice(-4,4)
+# "2358"
