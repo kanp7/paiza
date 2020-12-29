@@ -16,7 +16,7 @@ hour.each do |x|
         elsif (x + y) == 0
             puts "FIZZBUZZ"
         else
-          # 何故か空行が必要
+        # 何故か空行が必要
             puts ""
         end
     end
