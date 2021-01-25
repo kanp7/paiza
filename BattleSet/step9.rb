@@ -42,7 +42,7 @@ def check_line_symmetry_horizontal(wide)
     count = wide.count
     
     (wide.count/2).times do
-        if wide[index] == wide[count]
+        if wide[index] == wide[count-1]
             flag += 1
         end
         count -= 1
@@ -55,8 +55,6 @@ def check_line_symmetry_horizontal(wide)
         return false
     end
 end
-
-puts check_line_symmetry_horizontal(wide)
 
 def check_point_symmetry(wide)
     point = []
