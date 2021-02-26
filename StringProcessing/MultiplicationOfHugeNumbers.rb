@@ -13,3 +13,53 @@ puts s*t
 # 文字列から数値、数値から文字列の変換が重要な操作になります。
 # どちらかに考えを引っ張られることなく、柔軟に変換ができることを意識してください。
 # T == 0 の時は、答えが 0....0 の形式になってしまうので、例外的に処理してください。
+
+s = gets.chomp
+
+t = gets.to_i
+
+len = s.length
+
+adding = []
+c = 0
+
+if t == 0
+    puts 0
+else
+    len.times do |i| 
+        m = s.reverse[i].to_i * t
+        if m >= 10
+            m = m + c
+            m = m.to_s
+            m = m.split("")
+            c = m[0].to_i
+            if len == i + 1
+                adding << m
+            else
+                adding << m[1]
+            end
+        else
+            m = m + c
+            if m >= 10
+                m = m.to_s
+                m = m.split("")
+                c = m[0].to_i
+                if len == i + 1
+                    adding << m
+                else
+                    adding << m[1]
+                end
+            else
+                m = m.to_s
+                adding << m
+                # 桁上りが発生しなかった場合、Cをリセットする
+                c = 0
+            end
+        end
+    end
+    puts adding.reverse.join("")
+end
+
+
+
+
