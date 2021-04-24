@@ -6,4 +6,4 @@ list_b = list(map(int,input().split()))
 list_ab = list_a + list_b
 set_list = set(list_ab)  # 重複を削除
 sort_list = sorted(set_list)  # 並べ替え
-print(" ".join(list(map(str,(sort_list)))))
+print(" ".join(list(map(str,(sort_list)))))o
